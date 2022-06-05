@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400&family=Source+Sans+Pro:wght@300;400;700&display=swap');
+
+:root {
+    --color-black: #0f1117;
+    --color-white: #f7f8f9;
+
+    --gradient-orange: linear-gradient(
+        to bottom left,
+        #ed6d46,
+        #fe8834,
+        #df9722
+    );
+
+    --color-grey-light-1: #eff0f2;
+    --color-grey-light-2: #e8e8eb;
+    --color-grey-light-3: #d4d5d9;
+    --color-grey-light-4: #b5b6ba;
+
+    --color-grey-dark-1: #6e737b;
+    --color-grey-dark-2: #434953;
+    --color-grey-dark-3: #2a313a;
+    --color-grey-dark-4: #21262d;
+
+    --color-alert-danger: #ff8683;
+    --color-alert-success: #b5e3a6;
+    --color-alert-info: #ffe3a2;
+
+    --button-success-light: #45c932;
+    --button-success-dark: #2aa91c;
+    --button-danger-light: #eb3d30;
+    --button-danger-dark: #b5150c;
+    --button-primary-light: #01a1f7;
+    --button-primary-dark: #0176c7;
+
+    --button-shadow-primary: 0 2px 3px 1px rgba(0, 0, 0, 0.15);
+    --button-shadow-hover: 0 3px 7px 2px rgba(0, 0, 0, 0.35);
+
+    --shadow-light: 2px 2px 3px rgba(0, 0, 0, 0.15);
+    --shadow-dark: 2px 2px 3px rgba(0, 0, 0, 0.3);
+
+    --header-font-family: 'Oswald';
+    --header-font-size: 3.4rem;
+    --header-font-weight: 200;
+    --header-text-shadow: 0 2px 3px rgba(0, 0, 0, 0.35);
+    --header-letter-spacing: 0.3rem;
+
+    --title-font-family: 'Oswald';
+    --title-font-size: 2.4rem;
+    --title-font-weight: 400;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+body {
+    color: var(--color-black);
+    background: var(--color-white);
+    font-size: 1.6rem;
+    font-weight: 300;
+    font-family: 'Source Sans Pro', 'Lato', sans-serif;
+    min-height: 100vh;
+
+    input,
+    select,
+    button {
+        font-size: inherit;
+        font-weight: inherit;
+        font-family: inherit;
+        border: none;
+        outline: none;
+        padding: 0.8rem 1.8rem;
+        transition: all 0.3s ease;
+    }
+
+    button {
+        cursor: pointer;
+        box-shadow: var(--button-shadow-primary);
+
+        &:hover {
+            box-shadow: var(--button-shadow-hover);
+        }
+
+        &:active {
+            box-shadow: none;
+        }
+    }
+}
+
+@media screen and (max-width: 75em) {
+    html {
+        font-size: 56.25%;
+    }
+}
+
+@media screen and (max-width: 56.25em) {
+    html {
+        font-size: 50%;
+    }
+}

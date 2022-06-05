@@ -1,0 +1,51 @@
+.Button {
+    font-weight: 400;
+    color: var(--color-white);
+    background: transparent;
+
+    &:hover {
+        transform: translateY(-2px);
+    }
+
+    &:active {
+        transform: translateY(-1px);
+    }
+
+    &.Primary {
+        background: var(--button-primary-light);
+        &:hover {
+            background: var(--button-primary-dark);
+        }
+    }
+
+    &.Success {
+        background: var(--button-success-light);
+        &:hover {
+            background: var(--button-success-dark);
+        }
+    }
+
+    &.Danger {
+        background: var(--button-danger-light);
+        &:hover {
+            background: var(--button-danger-dark);
+        }
+    }
+
+    &.Invert {
+        color: currentColor;
+        border-color: currentColor;
+        box-shadow: none;
+        transform: none;
+
+        &:hover {
+            background: currentColor;
+            box-shadow: none;
+            transform: none;
+        }
+
+        &:active {
+            transform: none;
+        }
+    }
+}
