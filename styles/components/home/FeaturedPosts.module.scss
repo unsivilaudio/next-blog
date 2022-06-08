@@ -1,0 +1,22 @@
+.FeaturedPosts {
+    padding: 2.5rem;
+    padding-bottom: 4rem;
+    width: 100%;
+
+    .Header {
+        margin-top: 2rem;
+        font-size: var(--header-font-size);
+        font-family: var(--header-font-family);
+        font-weight: var(--header-font-weight);
+        letter-spacing: var(--header-letter-spacing);
+        text-shadow: var(--header-text-shadow);
+    }
+
+    .PostList {
+        margin-top: 2rem;
+        h3 {
+            padding: 1.5rem;
+            text-align: center;
+        }
+    }
+}

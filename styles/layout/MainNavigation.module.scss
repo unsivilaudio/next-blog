@@ -1,0 +1,140 @@
+.MainNavigation {
+    position: relative;
+    flex-basis: auto;
+    color: var(--color-white);
+    background: var(--gradient-bluegrey);
+    // padding-top: 3.5rem;
+    height: 100%;
+    transition: all 1s ease;
+    width: 30rem;
+
+    .Brand {
+        position: relative;
+        letter-spacing: 0.4rem;
+        font-family: 'Oswald', 'Lato', sans-serif;
+        font-size: 2.8rem;
+        font-weight: 300;
+        padding: 1.8rem;
+        margin: 1.5rem;
+        margin-bottom: 0;
+        z-index: 0;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        span {
+            transition: opacity 0.3s ease-in-out 0.3s;
+            line-height: 1;
+        }
+
+        .Toggle {
+            position: absolute;
+            right: 1.25rem;
+            height: 2.75rem;
+            cursor: pointer;
+            transform: rotate(-180deg) translateY(0);
+            transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) 0.7s;
+            z-index: 10;
+        }
+
+        &::after {
+            background: var(--gradient-orange);
+            position: absolute;
+            content: '';
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            border-radius: 0 1rem 0 1rem;
+            z-index: -1;
+        }
+    }
+
+    .NavList {
+        margin-top: 3rem;
+        list-style: none;
+        font-size: 2rem;
+        font-weight: 400;
+        text-transform: capitalize;
+
+        .NavItem {
+            margin-top: 1rem;
+            cursor: pointer;
+            position: relative;
+            padding: 1rem 2rem;
+
+            a {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                z-index: 2;
+            }
+
+            &::after {
+                content: '';
+                background: rgba(0, 0, 0, 0.15);
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 0;
+                transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0.2s;
+            }
+
+            &.Active {
+                &::after {
+                    width: 100%;
+                    background: rgb(102, 20, 244);
+                }
+            }
+            &:hover {
+                a {
+                    color: currentColor;
+                }
+
+                &::after {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    &.Minimize {
+        transition: all 1s ease;
+
+        width: 5rem;
+        overflow: hidden;
+
+        .Brand {
+            margin-left: 0;
+            margin-right: 0;
+            width: 100%;
+            box-shadow: 0 0 4.5px 1px rgba(0, 0, 0, 0.35);
+
+            &::after {
+                border-radius: 0;
+            }
+
+            span {
+                opacity: 0;
+            }
+
+            .Toggle {
+                transform: rotate(0);
+            }
+        }
+
+        .NavList {
+            .NavItem {
+                &::after {
+                    border-radius: 50%;
+                    transform: scale(0.75);
+                    transition: border-radius 0.3s ease 0.7s;
+                }
+            }
+        }
+    }
+}

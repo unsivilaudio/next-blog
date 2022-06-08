@@ -11,6 +11,8 @@
         #df9722
     );
 
+    --gradient-bluegrey: linear-gradient(to top right, #2c4257, #00416a);
+
     --color-grey-light-1: #eff0f2;
     --color-grey-light-2: #e8e8eb;
     --color-grey-light-3: #d4d5d9;
@@ -47,6 +49,9 @@
     --title-font-family: 'Oswald';
     --title-font-size: 2.4rem;
     --title-font-weight: 400;
+
+    --link-color: #2e2ec2;
+    --link-color-hover: #471afc;
 }
 
 * {
@@ -71,7 +76,20 @@ body {
     font-size: 1.6rem;
     font-weight: 300;
     font-family: 'Source Sans Pro', 'Lato', sans-serif;
-    min-height: 100vh;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+
+    a {
+        color: inherit;
+        text-decoration: none;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: var(--link-color-hover);
+        }
+    }
 
     input,
     select,
