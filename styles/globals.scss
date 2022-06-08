@@ -76,9 +76,8 @@ body {
     font-size: 1.6rem;
     font-weight: 300;
     font-family: 'Source Sans Pro', 'Lato', sans-serif;
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
-    overflow: hidden;
     display: flex;
 
     a {

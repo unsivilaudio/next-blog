@@ -1,0 +1,31 @@
+.PostItem {
+    background: var(--color-grey-dark-3);
+    .Container {
+        .Image {
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .Content {
+            color: var(--color-white);
+            padding: 2.2rem;
+            padding-bottom: 3.2rem;
+
+            .Title {
+                font-family: var(--title-font-family);
+                font-weight: var(--title-font-weight);
+                font-size: var(--title-font-size);
+                text-transform: capitalize;
+            }
+
+            .Time {
+                color: rgba(0, 0, 0, 0.35);
+            }
+
+            .Text {
+                font-size: 2rem;
+                text-indent: 0.7rem;
+            }
+        }
+    }
+}

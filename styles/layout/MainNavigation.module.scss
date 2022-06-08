@@ -1,10 +1,13 @@
 .MainNavigation {
-    position: relative;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    bottom: 0;
+    left: 0;
     flex-basis: auto;
     color: var(--color-white);
     background: var(--gradient-bluegrey);
     // padding-top: 3.5rem;
-    height: 100%;
     transition: all 1s ease;
     width: 30rem;
 
