@@ -1,0 +1,17 @@
+.ContactPage {
+    padding: 2.5rem;
+    padding-bottom: 4rem;
+    width: 100%;
+    max-width: 65rem;
+    margin: 0 auto;
+
+    .Header {
+        font-size: var(--header-font-size);
+        font-weight: var(--header-font-weight);
+        font-family: var(--header-font-family);
+        text-shadow: var(--header-text-shadow);
+        letter-spacing: var(--header-letter-spacing);
+        margin-bottom: 4rem;
+        text-align: center;
+    }
+}
