@@ -9,8 +9,28 @@ const ContactForm = props => {
     const phoneRef = createRef(null);
     const messageRef = createRef(null);
 
+    function onSubmitMessage(e) {
+        e.preventDefault();
+
+        const firstName = firstNameRef.current?.value?.trim();
+        const lastName = lastNameRef.current?.value?.trim();
+        const phone = phoneRef.current?.value?.trim();
+        const message = messageRef.current?.value?.trim();
+
+        if ([firstName, lastName, phone, message].every(x => x !== '')) {
+            const fullMessage = {
+                firstName,
+                lastName,
+                phone,
+                message,
+            };
+
+            console.log(fullMessage);
+        }
+    }
+
     return (
-        <form className={classes.ContactForm}>
+        <form className={classes.ContactForm} onSubmit={onSubmitMessage}>
             <div className={classes.FormGroup}>
                 <Input
                     label='first name'
@@ -41,7 +61,7 @@ const ContactForm = props => {
                 />
             </div>
             <div className={classes.FormActions}>
-                <Button>Submit</Button>
+                <Button type='submit'>Submit</Button>
             </div>
         </form>
     );

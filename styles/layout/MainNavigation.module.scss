@@ -69,11 +69,28 @@
             a {
                 padding: 1rem 2rem;
                 position: relative;
+                overflow: hidden;
+
                 display: flex;
-                flex-direction: column;
                 align-items: center;
+                gap: 1.2rem;
 
                 z-index: 2;
+
+                .Label {
+                    overflow: hidden;
+                    text-overflow: clip;
+                    white-space: nowrap;
+                    transition: width 0.3s linear 0.3s;
+                }
+
+                .Icon {
+                    height: 2.5rem;
+
+                    svg {
+                        height: 100%;
+                    }
+                }
             }
 
             &::after {
@@ -132,6 +149,19 @@
 
         .NavList {
             .NavItem {
+                a {
+                    justify-content: center;
+
+                    .Label {
+                        position: absolute;
+                        width: 0;
+                    }
+
+                    .Icon {
+                        transform: scale(1);
+                    }
+                }
+
                 &::after {
                     border-radius: 50%;
                     transform: scale(0.75);

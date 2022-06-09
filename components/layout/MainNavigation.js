@@ -23,9 +23,14 @@ const MainNavigation = props => {
                                 : '',
                         ].join(' ')}>
                         <Link href={route.path}>
-                            {minimize
-                                ? route.label[0].toUpperCase()
-                                : route.label}
+                            <a>
+                                <span className={classes.Icon}>
+                                    {route.icon}
+                                </span>
+                                <span className={classes.Label}>
+                                    {route.label}
+                                </span>
+                            </a>
                         </Link>
                     </li>
                 );
