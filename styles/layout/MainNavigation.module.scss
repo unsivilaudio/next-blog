@@ -8,8 +8,8 @@
     color: var(--color-white);
     background: var(--gradient-bluegrey);
     // padding-top: 3.5rem;
-    transition: all 1s ease;
     width: 30rem;
+    transition: width 1s ease;
 
     .Brand {
         position: relative;
@@ -78,10 +78,13 @@
                 z-index: 2;
 
                 .Label {
+                    width: 12rem;
                     overflow: hidden;
                     text-overflow: clip;
                     white-space: nowrap;
-                    transition: width 0.3s linear 0.3s;
+                    transition: opacity 0.3s linear, transform 0.5s ease 0.7s;
+                    transform: scale(1);
+                    transform-origin: 0 50%;
                 }
 
                 .Icon {
@@ -123,7 +126,7 @@
     }
 
     &.Minimize {
-        transition: all 1s ease;
+        transition: all 1s ease 0.5s;
 
         width: 5rem;
         overflow: hidden;
@@ -151,14 +154,19 @@
             .NavItem {
                 a {
                     justify-content: center;
+                    // gap: 0;
 
                     .Label {
-                        position: absolute;
+                        opacity: 0;
                         width: 0;
+                        transform: scale(0);
                     }
 
                     .Icon {
-                        transform: scale(1);
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
                     }
                 }
 
