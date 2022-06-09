@@ -1,0 +1,10 @@
+.AllPosts {
+    .Header {
+        font-family: var(--header-font-family);
+        font-size: var(--header-font-size);
+        font-weight: var(--header-font-weight);
+        letter-spacing: var(--header-letter-spacing);
+        text-shadow: var(--header-text-shadow);
+        text-transform: uppercase;
+    }
+}

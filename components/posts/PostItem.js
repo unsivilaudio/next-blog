@@ -24,6 +24,7 @@ const PostItem = props => {
                             width={300}
                             height={200}
                             layout='responsive'
+                            objectFit='cover'
                         />
                     </div>
                     <div className={classes.Content}>

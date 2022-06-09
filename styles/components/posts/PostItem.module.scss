@@ -1,9 +1,9 @@
 .PostItem {
     background: var(--color-grey-dark-3);
+
     .Container {
         .Image {
             width: 100%;
-            object-fit: cover;
         }
 
         .Content {
@@ -19,12 +19,13 @@
             }
 
             .Time {
-                color: rgba(0, 0, 0, 0.35);
+                color: var(--color-grey-light-2);
             }
 
             .Text {
+                margin-top: 1rem;
                 font-size: 2rem;
-                text-indent: 0.7rem;
+                text-indent: 1.2rem;
             }
         }
     }
