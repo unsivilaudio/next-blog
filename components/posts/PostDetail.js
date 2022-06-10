@@ -57,13 +57,7 @@ const PostDetail = ({ post }) => {
             <div className={classes.Header}>
                 <span>{post.title}</span>
                 <div className={classes.Image}>
-                    <Image
-                        src={imagePath}
-                        width={300}
-                        height={300}
-                        layout='fill'
-                        objectFit='cover'
-                    />
+                    <Image src={imagePath} layout='fill' objectFit='cover' />
                 </div>
             </div>
             <div className={classes.Content}>
