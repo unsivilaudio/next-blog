@@ -34,12 +34,13 @@
 
     &.Invert {
         color: currentColor;
-        border-color: currentColor;
+        border: 1px solid transparent;
         box-shadow: none;
         transform: none;
 
         &:hover {
-            background: currentColor;
+            border: 1px solid currentColor;
+            background: transparent;
             box-shadow: none;
             transform: none;
         }

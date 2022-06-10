@@ -9,7 +9,7 @@
     background: var(--gradient-bluegrey);
     // padding-top: 3.5rem;
     width: 30rem;
-    transition: width 1s ease;
+    transition: width 1s cubic-bezier(0.58, 0.34, 0.67, 1);
 
     .Brand {
         position: relative;
@@ -126,7 +126,7 @@
     }
 
     &.Minimize {
-        transition: all 1s ease 0.5s;
+        // transition: all 1s ease 0.5s;
 
         width: 5rem;
         overflow: hidden;

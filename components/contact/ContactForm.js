@@ -7,6 +7,7 @@ const ContactForm = props => {
     const firstNameRef = createRef(null);
     const lastNameRef = createRef(null);
     const phoneRef = createRef(null);
+    const emailRef = createRef(null);
     const messageRef = createRef(null);
 
     function onSubmitMessage(e) {
@@ -15,13 +16,15 @@ const ContactForm = props => {
         const firstName = firstNameRef.current?.value?.trim();
         const lastName = lastNameRef.current?.value?.trim();
         const phone = phoneRef.current?.value?.trim();
+        const email = emailRef.current?.value?.trim();
         const message = messageRef.current?.value?.trim();
 
-        if ([firstName, lastName, phone, message].every(x => x !== '')) {
+        if ([firstName, lastName, email, phone, message].every(x => x !== '')) {
             const fullMessage = {
                 firstName,
                 lastName,
                 phone,
+                email,
                 message,
             };
 
@@ -54,6 +57,13 @@ const ContactForm = props => {
             </div>
             <div className={classes.FormGroup}>
                 <Input
+                    label='email'
+                    ref={emailRef}
+                    placeholder='jsmith@mail.com'
+                />
+            </div>
+            <div className={classes.FormGroup}>
+                <Input
                     type='textarea'
                     label='message'
                     ref={messageRef}
@@ -61,7 +71,9 @@ const ContactForm = props => {
                 />
             </div>
             <div className={classes.FormActions}>
-                <Button type='submit'>Submit</Button>
+                <Button theme='invert' type='submit'>
+                    Submit
+                </Button>
             </div>
         </form>
     );

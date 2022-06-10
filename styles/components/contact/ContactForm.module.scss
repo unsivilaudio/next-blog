@@ -12,6 +12,17 @@
             flex-basis: 100%;
         }
 
+        textarea,
+        input {
+            color: currentColor;
+            resize: none;
+
+            &:focus-within {
+                color: var(--color-black);
+                box-shadow: none;
+            }
+        }
+
         label {
             text-align: left;
         }
@@ -23,6 +34,16 @@
     }
 
     .FormActions {
+        margin-top: 1.5rem;
         flex-basis: 100%;
+        display: flex;
+        justify-content: flex-end;
+
+        button {
+            font-weight: 600;
+            &:hover {
+                border-radius: 1rem 0 1rem 0;
+            }
+        }
     }
 }
