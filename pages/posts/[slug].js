@@ -1,3 +1,5 @@
+import Head from 'next/head';
+
 import PostDetail from 'components/posts/PostDetail';
 import { getPostFiles, getPostData } from 'lib/posts-util';
 import classes from 'styles/pages/PostDetailPage.module.scss';
@@ -7,6 +9,10 @@ const PostDetailPage = props => {
 
     return (
         <div className={classes.PostDetailPage}>
+            <Head>
+                <title>{props.post.title} | Bloggr</title>
+                <meta name='description' content={props.post.excerpt} />
+            </Head>
             <PostDetail post={props.post} />
         </div>
     );

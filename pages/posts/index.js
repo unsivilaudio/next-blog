@@ -5,6 +5,13 @@ import classes from 'styles/pages/AllPostsPage.module.scss';
 const AllPostsPage = props => {
     return (
         <div className={classes.AllPostsPage}>
+            <Head>
+                <title>All Posts</title>
+                <meta
+                    name='description'
+                    content='A list of all programming-related tutorials and posts.'
+                />
+            </Head>
             <AllPosts posts={props.posts} />
         </div>
     );

@@ -9,7 +9,11 @@ export default function HomePage(props) {
     return (
         <div className={classes.HomePage}>
             <Head>
-                <title>Home | Bloggr</title>
+                <title>Welcome to my blog | Bloggr</title>
+                <meta
+                    name='description'
+                    content='I post about programimng and web development.'
+                />
             </Head>
             <Hero />
             <FeaturedPosts posts={props.posts} />

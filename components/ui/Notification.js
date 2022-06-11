@@ -1,3 +1,4 @@
+import { createPortal } from 'react-dom';
 import { useContext } from 'react';
 
 import NotificationContext from 'context/notification-context';
@@ -19,12 +20,13 @@ const Notification = ({ title, message, status }) => {
             break;
     }
 
-    return (
+    return createPortal(
         <div className={notifyClasses.join(' ')}>
             <p>{title}</p>
             <p>{message}</p>
             <span onClick={notifyCtx.hideNotification}>X</span>
-        </div>
+        </div>,
+        document.getElementById('notifications')
     );
 };
 

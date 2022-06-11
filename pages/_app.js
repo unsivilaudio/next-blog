@@ -11,6 +11,10 @@ function MyApp({ Component, pageProps }) {
                 <Head>
                     <title>NextJs | Bloggr</title>
                     <meta
+                        name='viewport'
+                        content='width=device-width, initial-scale=1'
+                    />
+                    <meta
                         name='description'
                         content='A Simple Blog Application built on Next.js'
                     />
