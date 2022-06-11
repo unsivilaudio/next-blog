@@ -1,0 +1,33 @@
+.Notification {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    color: var(--color-white);
+    font-size: 2rem;
+    padding: 1rem 3.2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    span {
+        transition: color 0.3s ease;
+        &:hover {
+            color: var(--color-black);
+        }
+    }
+
+    &.Pending {
+        background: var(--color-alert-info);
+    }
+
+    &.Success {
+        background: var(--color-alert-success);
+    }
+
+    &.Error {
+        background: var(--color-alert-danger);
+    }
+}

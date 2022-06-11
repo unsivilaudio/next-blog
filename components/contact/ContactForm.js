@@ -1,9 +1,11 @@
-import { createRef } from 'react';
+import { createRef, useContext } from 'react';
+import NotificationContext from 'context/notification-context';
 import Input from 'components/ui/Input';
 import Button from 'components/ui/Button';
 import classes from 'styles/components/contact/ContactForm.module.scss';
 
 const ContactForm = props => {
+    const notifyCtx = useContext(NotificationContext);
     const firstNameRef = createRef(null);
     const lastNameRef = createRef(null);
     const phoneRef = createRef(null);
@@ -29,6 +31,42 @@ const ContactForm = props => {
             };
 
             console.log(fullMessage);
+            notifyCtx.showNotification({
+                status: 'pending',
+                message: 'Sending Message...',
+                title: 'POST',
+            });
+            fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(fullMessage),
+            })
+                .then(async res => {
+                    const data = await res.json();
+                    if (!res.ok) {
+                        throw new Error(res.error);
+                    }
+
+                    return data;
+                })
+                .then(data => {
+                    console.log(data);
+
+                    notifyCtx.showNotification({
+                        status: 'success',
+                        message: data.message,
+                        title: 'Success',
+                    });
+                })
+                .catch(err => {
+                    console.log(err.message);
+
+                    notifyCtx.showNotification({
+                        status: 'error',
+                        message: data.message,
+                        title: 'Error',
+                    });
+                });
         }
     }
 
