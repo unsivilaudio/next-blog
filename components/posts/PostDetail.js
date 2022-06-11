@@ -1,23 +1,19 @@
 import Image from 'next/image';
 import ReactMarkdown from 'react-markdown';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { atomDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
+import atomDark from 'react-syntax-highlighter/dist/cjs/styles/prism/atom-dark';
+import js from 'react-syntax-highlighter/dist/cjs/languages/prism/javascript';
+import css from 'react-syntax-highlighter/dist/cjs/languages/prism/css';
+
 import classes from 'styles/components/posts/PostDetail.module.scss';
+
+SyntaxHighlighter.registerLanguage('js', js);
+SyntaxHighlighter.registerLanguage('css', css);
 
 const PostDetail = ({ post }) => {
     const imagePath = `/images/posts/${post.slug}/${post.image}`;
 
     const customRenderers = {
-        // img(image) {
-        //   return (
-        //     <Image
-        //       src={`/images/posts/${post.slug}/${image.src}`}
-        //       alt={image.alt}
-        //       width={600}
-        //       height={300}
-        //     />
-        //   );
-        // },
         p(paragraph) {
             const { node } = paragraph;
 
