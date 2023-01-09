@@ -29,7 +29,7 @@ const Button = ({
 
     if (link) {
         return (
-            <Link href={link}>
+            <Link href={link} legacyBehavior>
                 <a className={btnClasses.join(' ')}></a>
             </Link>
         );

@@ -15,7 +15,7 @@ const PostItem = props => {
 
     return (
         <li className={classes.PostItem}>
-            <Link href={linkPath}>
+            <Link href={linkPath} legacyBehavior>
                 <a className={classes.Container}>
                     <div className={classes.Image}>
                         <Image

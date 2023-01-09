@@ -21,7 +21,7 @@ const PostDetail = ({ post }) => {
                 const image = node.children[0];
 
                 return (
-                    <div className={classes.image}>
+                    <div className={classes.Image}>
                         <Image
                             src={`/images/posts/${post.slug}/${image.properties.src}`}
                             alt={image.alt}

@@ -23,14 +23,8 @@ const MainNavigation = props => {
                                 : '',
                         ].join(' ')}>
                         <Link href={route.path}>
-                            <a>
-                                <span className={classes.Icon}>
-                                    {route.icon}
-                                </span>
-                                <span className={classes.Label}>
-                                    {route.label}
-                                </span>
-                            </a>
+                            <span className={classes.Icon}>{route.icon}</span>
+                            <span className={classes.Label}>{route.label}</span>
                         </Link>
                     </li>
                 );

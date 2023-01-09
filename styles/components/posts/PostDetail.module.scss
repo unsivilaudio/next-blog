@@ -35,6 +35,12 @@
         padding: 3.5rem;
         padding-bottom: 4.5rem;
 
+        .Image {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
         a {
             color: var(--link-color);
             font-weight: 600;
